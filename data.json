@@ -1,0 +1,134 @@
+[
+    {
+        "name": "Auckland",
+        "active": "123",
+        "recovered": "2369",
+        "deceased": "8"
+    },
+    {
+        "name": "Bay of Plenty",
+        "active": "95",
+        "recovered": "278",
+        "deceased": "1"
+    },
+    {
+        "name": "Canterbury",
+        "active": "5",
+        "recovered": "181",
+        "deceased": "12"
+    },
+    {
+        "name": "Capital and Coast",
+        "active": "3",
+        "recovered": "112",
+        "deceased": "2"
+    },
+    {
+        "name": "Counties Manukau",
+        "active": "177",
+        "recovered": "4977",
+        "deceased": "8"
+    },
+    {
+        "name": "Hawke's Bay",
+        "active": "2",
+        "recovered": "49",
+        "deceased": "0"
+    },
+    {
+        "name": "Hutt Valley",
+        "active": "4",
+        "recovered": "25",
+        "deceased": "0"
+    },
+    {
+        "name": "Lakes",
+        "active": "41",
+        "recovered": "87",
+        "deceased": "0"
+    },
+    {
+        "name": "Mid Central",
+        "active": "0",
+        "recovered": "39",
+        "deceased": "0"
+    },
+    {
+        "name": "Nelson Marlborough",
+        "active": "0",
+        "recovered": "73",
+        "deceased": "0"
+    },
+    {
+        "name": "Northland",
+        "active": "4",
+        "recovered": "134",
+        "deceased": "0"
+    },
+    {
+        "name": "South Canterbury",
+        "active": "1",
+        "recovered": "17",
+        "deceased": "0"
+    },
+    {
+        "name": "Southern",
+        "active": "0",
+        "recovered": "215",
+        "deceased": "2"
+    },
+    {
+        "name": "Tair\u0101whiti",
+        "active": "1",
+        "recovered": "6",
+        "deceased": "0"
+    },
+    {
+        "name": "Taranaki",
+        "active": "3",
+        "recovered": "58",
+        "deceased": "0"
+    },
+    {
+        "name": "Waikato",
+        "active": "40",
+        "recovered": "904",
+        "deceased": "2"
+    },
+    {
+        "name": "Wairarapa",
+        "active": "4",
+        "recovered": "11",
+        "deceased": "0"
+    },
+    {
+        "name": "Waitemat\u0101",
+        "active": "69",
+        "recovered": "2845",
+        "deceased": "14"
+    },
+    {
+        "name": "West Coast",
+        "active": "0",
+        "recovered": "4",
+        "deceased": "1"
+    },
+    {
+        "name": "Whanganui",
+        "active": "0",
+        "recovered": "10",
+        "deceased": "0"
+    },
+    {
+        "name": "Managed Isolation & Quarantine",
+        "active": "433",
+        "recovered": "1550",
+        "deceased": "2"
+    },
+    {
+        "name": "Total",
+        "active": "1005",
+        "recovered": "13944",
+        "deceased": "52"
+    }
+]
