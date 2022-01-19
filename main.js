@@ -62,36 +62,51 @@ var city_data = {
 }
 
 var heat_color = [
-  "#f2f0f7",
-  "#cbc9e2",
-  "#9e9ac8",
-  "#756bb1",
-  "#54278f"]
+  ["#f2f0f7", "#edf8fb", "#f1eef6"],
+  ["#cbc9e2", "#b2e2e2", "#bdc9e1"],
+  ["#9e9ac8", "#66c2a4", "#74a9cf"],
+  ["#756bb1", "#2ca25f", "#2b8cbe"],
+  ["#54278f", "#006d2c", "#045a8d"]]
 var max_list = [0, 0, 0]//active, deceased, recovered
 var city_json;
 
 function init() {
-  cases_total_num = city_json[21].active - city_json[20].active
-  console.log(cases_total_num)
-  console.log(max_list)
+  document.getElementById("updated").innerHTML = city_json[22]["updated"]
 
   for (city in city_data) {
-    //console.log(city_data[city].active / cases_total_num)
     heat_color_num = Math.ceil(city_data[city].active/max_list[0] * 4)
-    console.log(heat_color_num)
-    document.getElementById(city).setAttribute('style', 'fill:' + heat_color[heat_color_num])
+    document.getElementById(city).setAttribute('style', 'fill:' + heat_color[heat_color_num][0])
 
 
     document.getElementById(city).addEventListener('mouseenter', function (e) {
       e.currentTarget.setAttribute('stroke-width', '1');
       currentcityid = e.currentTarget.getAttribute("id")
-      document.getElementById("DHBname").innerHTML = city_data[currentcityid].name + " " + city_data[currentcityid].active;
+      document.getElementById("DHBname").innerHTML = city_data[currentcityid].name
+      document.getElementById("DHBactive").innerHTML = "Active: " + city_data[currentcityid].active
+      document.getElementById("DHBrecovered").innerHTML = "Recovered: " + city_data[currentcityid].recovered
+      document.getElementById("DHBdeceased").innerHTML = "Deceased: " + city_data[currentcityid].deceased
     });
     document.getElementById(city).addEventListener('mouseleave', function (e) {
       e.currentTarget.setAttribute('stroke-width', '0.1');
     });
   }
 
+  document.getElementById("active_button").addEventListener('click', function() {change_color(0) })
+  document.getElementById("recovered_button").addEventListener('click', function(){change_color(1)})
+  document.getElementById("deceased_button").addEventListener('click', function(){change_color(2)})
+}
+
+function change_color(category){
+  for (city in city_data){
+    if(category == 0){
+      heat_color_num = Math.ceil(city_data[city].active/max_list[0] * 4)
+    }else if(category == 1){
+      heat_color_num = Math.ceil(city_data[city].recovered/max_list[1] * 4)
+    }else if(category == 2){
+      heat_color_num = Math.ceil(city_data[city].deceased/max_list[2] * 4)
+    }
+    document.getElementById(city).setAttribute('style', 'fill:' + heat_color[heat_color_num][category])
+  }
 }
 
 function change_max(active, deceased, recovered) {
@@ -107,7 +122,6 @@ request.responseType = 'json'
 request.send();
 request.onload = function () {
   city_json = request.response;
-  console.log(city_json[0].name)
   for (city in city_json) {
     for (dcity in city_data) {
       if (city_json[city].name == city_data[dcity].name) {
@@ -122,7 +136,6 @@ request.onload = function () {
     }
 
   }
-  console.log(city_data)
 
 }
 

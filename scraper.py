@@ -10,9 +10,11 @@ def scrape():
     soup = BeautifulSoup(page.content, "html.parser")
     table_soup = soup.find_all("tbody")[-2]
 
+    
     city_data = table_soup.find_all("tr")
 
     city_list = []
+    
 
     for city_soup in city_data:
         small_d = {}
@@ -22,14 +24,10 @@ def scrape():
         small_d["recovered"] = found_list[2].text
         small_d["deceased"] = found_list[3].text
         city_list.append(small_d)
-    print(city_list[13])
+
+    city_list.append({"updated" : soup.find("p", {"class": "georgia-italic"}).text})
+    
     
     with open('data.json', 'w') as f:
         json.dump(city_list, f)
-
-    #ab = city_data[0].find_all("td")
-    #for bb in ab:
-     #  print(bb.text)
-    #print(ab)
-    #print(city_data)
 scrape()
